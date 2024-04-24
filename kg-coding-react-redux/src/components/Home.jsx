@@ -12,10 +12,10 @@ const Home = () => {
       <div>
         <h2 className="text-center">You can go to following Projects:</h2>
         <div className="flex flex-wrap gap-20  my-8">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Card data={{ path: "/todo", name: "Todo App" }} />
+          <Card data={{ path: "/clock", name: "Clock App" }} />
+          <Card data={{ path: "/clock", name: "Clock App" }} />
+          <Card data={{ path: "/clock", name: "Clock App" }} />
         </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
 const InputTodo = (props) => {
-  const {input , setInput}= props;
-  console.log(props);
+  const { input, setInput, date, setDate, onclick } = props;
   return (
     <div className="flex my-3 gap-10 border-2 bg-slate-400 p-4 rounded-xl">
       <input
@@ -17,11 +16,12 @@ const InputTodo = (props) => {
         type="date"
         id="meeting-time"
         name="meeting-time"
-        value=""
-        // min={new Date()}
-        // max="2018-06-14T00:00"
+        value={date}
+        onChange={(e) => {
+          setDate(e.target.value);
+        }}
       />
-      <button className="w-40 rounded-lg border-2 bg-green-500 text-white">
+      <button onClick={onclick}  className="w-40 rounded-lg border-2 bg-green-500 text-white">
         Add
       </button>
     </div>

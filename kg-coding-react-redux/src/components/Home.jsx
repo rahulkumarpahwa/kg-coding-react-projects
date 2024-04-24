@@ -14,7 +14,7 @@ const Home = () => {
         <div className="flex flex-wrap gap-20  my-8">
           <Card data={{ path: "/todo", name: "Todo App" }} />
           <Card data={{ path: "/clock", name: "Clock App" }} />
-          <Card data={{ path: "/clock", name: "Clock App" }} />
+          <Card data={{ path: "/calculator", name: "Calculator App" }} />
           <Card data={{ path: "/clock", name: "Clock App" }} />
         </div>
       </div>

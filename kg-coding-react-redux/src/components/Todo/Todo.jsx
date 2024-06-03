@@ -11,15 +11,18 @@ const Todo = () => {
     { task: "Study React and Redux", date: "2024-04-09" },
   ]);
 
-  const onclick = () => {
-    const obj = { task: input, date: date };
-    data.push(obj);
-    setInput("");
-    setDate("");
+  const onclick = (e) => {
+    if (input === "" || date === "") {
+      e.preventDefault();
+    } else {
+      const obj = { task: input, date: date };
+      data.push(obj);
+      setInput("");
+      setDate("");
+    }
   };
 
-  const ondelete =()=>{
-  };
+  const ondelete = () => {};
 
   return (
     <div className="my-4 flex flex-col items-center">

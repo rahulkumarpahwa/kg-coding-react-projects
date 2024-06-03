@@ -65,10 +65,13 @@ const Calculator = () => {
           }}
         />
         <div className="">
-          {buttons.map((value, index) => (
+          {buttons.map((value) => (
             <button
-              className="w-10 h-10 m-2 rounded-lg font-bold text-center p-4 text-white bg-slate-400 hover:bg-white hover:text-slate-600"
-              key={index}
+              className="w-10 h-10 m-2 rounded-lg font-bold text-center p-4 text-white bg-slate-400  hover:text-slate-600"
+              key={value}
+              onChange={() => {
+                setNumber(number + value.value);
+              }}
             >
               {value.name}
             </button>

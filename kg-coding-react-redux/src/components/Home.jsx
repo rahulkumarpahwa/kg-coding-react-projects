@@ -36,7 +36,7 @@ const Home = () => {
             <Card data={{ path: "/todo", name: "Todo App" }} />
             <Card data={{ path: "/clock", name: "Clock App" }} />
             <Card data={{ path: "/calculator", name: "Calculator App" }} />
-            {/* <Card data={{ path: "/clock", name: "Clock App" }} /> */}
+            <Card data={{ path: "/food", name: "Healthy Food" }} />
           </div>
         </div>
       </div>

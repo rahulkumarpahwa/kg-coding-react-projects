@@ -1,14 +1,25 @@
 import { useState } from "react";
 import BackButton from "../BackButton";
-import Socials from "../Socials";
 
 const Calculator = () => {
-  const [number, setNumber] = useState();
+  const [number, setNumber] = useState("");
 
   const buttons = [
     {
-      name: "c",
-      value: "",
+      name: "+",
+      value: "+",
+    },
+    {
+      name: "-",
+      value: "-",
+    },
+    {
+      name: "*",
+      value: "*",
+    },
+    {
+      name: "/",
+      value: "/",
     },
     {
       name: "1",
@@ -53,33 +64,53 @@ const Calculator = () => {
   ];
 
   return (
-    <div className="flex items-center justify-center font-bold my-20">
+    <div className="flex items-center justify-center font-bold my-10 relative">
       <BackButton />
-      <div className="m-auto border-2 flex flex-col w-72 border-slate-500 p-10  rounded-lg">
+      <div className="m-auto border-2 flex flex-col w-72 border-slate-500 p-8  rounded-lg">
         <input
           className="border-2 border-white bg-slate-400 w-30 py-2 rounded-lg px-2 text-white outline-slate-500"
-          type="number"
+          type="text"
           value={number}
           onChange={(e) => {
             setNumber(e.target.value);
           }}
         />
-        <div className="">
+        <div className="flex items-center justify-center flex-wrap gap-1 my-1">
+          <div>
+            <button
+              className="w-10 h-10 m-2 rounded-lg font-bold text-center text-white bg-slate-400  hover:text-slate-800"
+              onClick={() => {
+                let ans = eval(number);
+                console.log(ans)
+                setNumber(ans);
+              }}
+            >
+              c
+            </button>
+          </div>
           {buttons.map((value) => (
             <button
-              className="w-10 h-10 m-2 rounded-lg font-bold text-center p-4 text-white bg-slate-400  hover:text-slate-600"
+              className="w-10 h-10 m-2 rounded-lg font-bold text-center text-white bg-slate-400  hover:text-slate-800"
               key={value}
-              onChange={() => {
+              onClick={() => {
                 setNumber(number + value.value);
               }}
             >
               {value.name}
             </button>
           ))}
+          <div>
+            <button
+              className="h-10 m-2 w-44 rounded-lg font-bold text-center text-white bg-slate-400  hover:text-slate-800"
+              onClick={() => {
+                setNumber("");
+              }}
+            >
+              =
+            </button>
+          </div>
         </div>
       </div>
-
-      <Socials />
     </div>
   );
 };

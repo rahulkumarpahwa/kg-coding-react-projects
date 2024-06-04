@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const Socials = () => {
   return (
-    <h3 className="absolute bottom-0 text-lg m-auto">
+    <h3 className="absolute bottom-0 text-lg m-auto text-center">
       Made with &hearts; by{" "}
       <Link
         className="text-inherit"

@@ -34,10 +34,16 @@ const Navbar = () => {
                 Clock
               </Link>
               <Link
-                to="/todo"
+                to="/calculator"
                 className="no-underline text-inherit  hover:text-[#00cce7] font-semibold"
               >
                 Calculator
+              </Link>
+              <Link
+                to="/food"
+                className="no-underline text-inherit  hover:text-[#00cce7] font-semibold"
+              >
+                Healthy Food
               </Link>
             </ul>
           </div>

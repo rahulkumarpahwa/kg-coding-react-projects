@@ -30,6 +30,12 @@ const Home = () => {
           Hi! My name is Rahul Kumar and This is a home page of the React-Redux
           Projects with KG Coding.
         </p>
+
+        <figure className="shadow p-2">
+          <img src="https://avatars.githubusercontent.com/u/56966500?v=4" className="w-48" />
+          <figcaption>Rahul Kumar</figcaption>
+        </figure>
+
         <div>
           <h2 className="text-center">You can go to following Projects:</h2>
           <div className="flex flex-wrap gap-20  my-4">

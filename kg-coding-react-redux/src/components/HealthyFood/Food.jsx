@@ -20,7 +20,7 @@ const Food = () => {
       <div className="flex flex-col items-center justify-center m-4 border p-4 rounded-lg">
         <h2 className="">Healthy Foods</h2>
         <InputFood setList={setList} />
-        <hr className="h-px w-56" />
+        <hr className="h-px w-60" />
         <FoodItem foodList={foodList} />
         <Error foodList={foodList} />
       </div>

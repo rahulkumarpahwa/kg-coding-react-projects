@@ -3,6 +3,7 @@ import { useState } from "react";
 import TodoItem from "./TodoItem";
 import Socials from "../Socials";
 import BackButton from "../BackButton";
+import toast, { Toaster } from "react-hot-toast";
 
 const Todo = () => {
   const [input, setInput] = useState("");
@@ -14,9 +15,11 @@ const Todo = () => {
   const onclick = (e) => {
     if (input === "" || date === "") {
       e.preventDefault();
+      toast.error("Input/Date is Empty!")
     } else {
       const obj = { task: input, date: date };
       data.push(obj);
+      toast.success("New Todo Created!")
       console.log(data);
       setInput("");
       setDate("");
@@ -26,6 +29,7 @@ const Todo = () => {
   const ondelete = (value) => {
     const newData = data.filter((item) => item !== value);
     setData(newData);
+    toast.success("Todo Deleted!")
   };
 
   return (
@@ -42,7 +46,9 @@ const Todo = () => {
       {data.map((value, index) => (
         <TodoItem key={index} value={value} ondelete={() => ondelete(value)} />
       ))}
+      <div>{data.length === 0 && "Todo is Empty!"}</div>
       <Socials />
+      <Toaster/>
     </div>
   );
 };

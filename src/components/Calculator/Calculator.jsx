@@ -1,8 +1,30 @@
 import { useState } from "react";
 import BackButton from "../BackButton";
+import toast, { Toaster } from "react-hot-toast";
 
 const Calculator = () => {
-  const [number, setNumber] = useState("");
+  const [number, setNumber] = useState("0");
+  // const [signColors, setSignsColors] = useState({
+  //   clear: "#a7a6a7",
+  //   numbers: "#333333",
+  //   operators: "#ff9602",
+  // }); 
+
+  const calculate = (value) => {
+    try {
+      if (value === "c") {
+        setNumber("");
+      } else if (value === "=") {
+        const result = eval(number.toString());
+        setNumber(result);
+      } else {
+        setNumber(number + value);
+      }
+    } catch (error) {
+      // console.log(error.message);
+      toast.error(error.message + "\n Please Clear! & Try again");
+    }
+  };
 
   const buttons = [
     {
@@ -61,55 +83,46 @@ const Calculator = () => {
       name: "0",
       value: "0",
     },
+    {
+      name: "c",
+      value: "c",
+    },
+    {
+      name: ".",
+      value: ".",
+    },
+    {
+      name: "=",
+      value: "=",
+    },
   ];
 
   return (
     <div className="flex items-center justify-center font-bold my-10 relative">
       <BackButton />
-      <div className="m-auto border-2 flex flex-col w-72 border-slate-500 p-8  rounded-lg">
+      <div className="m-auto border-2 flex flex-col w-[16rem] border-slate-500 p-8 bg-black  rounded-lg">
         <input
-          className="border-2 border-white bg-slate-400 w-30 py-2 rounded-lg px-2 text-white outline-slate-500"
+          className="text-right w-30 py-2 text-5xl font-light text-white focus:outline-none bg-inherit"
           type="text"
           value={number}
           onChange={(e) => {
             setNumber(e.target.value);
           }}
         />
-        <div className="flex items-center justify-center flex-wrap gap-1 my-1">
-          <div>
-            <button
-              className="w-10 h-10 m-2 rounded-lg font-bold text-center text-white bg-slate-400  hover:text-slate-800"
-              onClick={() => {
-                let ans = eval(number);
-                console.log(ans)
-                setNumber(ans);
-              }}
-            >
-              c
-            </button>
-          </div>
+        <div className="flex items-center justify-evenly flex-wrap gap-2 my-1">
           {buttons.map((value) => (
             <button
-              className="w-10 h-10 m-2 rounded-lg font-bold text-center text-white bg-slate-400  hover:text-slate-800"
-              key={value}
+              className="w-[3rem] h-[3rem] rounded-full font-bold text-center text-white bg-[#ff9602] hover:text-slate-800"
+              key={value.value}
               onClick={() => {
-                setNumber(number + value.value);
+                calculate(value.value);
               }}
             >
               {value.name}
             </button>
           ))}
-          <div>
-            <button
-              className="h-10 m-2 w-44 rounded-lg font-bold text-center text-white bg-slate-400  hover:text-slate-800"
-              onClick={() => {
-                setNumber("");
-              }}
-            >
-              =
-            </button>
-          </div>
         </div>
+        <Toaster />
       </div>
     </div>
   );

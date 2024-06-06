@@ -17,12 +17,16 @@ const Todo = () => {
     } else {
       const obj = { task: input, date: date };
       data.push(obj);
+      console.log(data);
       setInput("");
       setDate("");
     }
   };
 
-  const ondelete = () => {};
+  const ondelete = (value) => {
+    const newData = data.filter((item) => item !== value);
+    setData(newData);
+  };
 
   return (
     <div className="my-4 flex flex-col items-center">
@@ -36,7 +40,7 @@ const Todo = () => {
         onclick={onclick}
       />
       {data.map((value, index) => (
-        <TodoItem key={index} value={value} ondelete={ondelete} />
+        <TodoItem key={index} value={value} ondelete={() => ondelete(value)} />
       ))}
       <Socials />
     </div>

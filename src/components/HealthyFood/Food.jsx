@@ -24,6 +24,10 @@ const Food = () => {
     }
   };
 
+  const clearList = () => {
+    setFoodList([]);
+  };
+
   return (
     <div className="flex justify-center items-center flex-col m-8">
       <BackButton />
@@ -44,6 +48,14 @@ const Food = () => {
         </ul>
 
         <Error foodList={foodList} />
+        <hr className="h-px w-60" />
+
+        <button
+          className="bg-pink-500 rounded-lg px-2 py-1 font-medium text-white my-2"
+          onClick={clearList}
+        >
+          Clear Whole List
+        </button>
       </div>
     </div>
   );

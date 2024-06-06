@@ -1,5 +1,4 @@
 const TodoItem = (props) => {
-  console.log(props);
   return (
     <div className=" todo-container items-center flex justify-center text-center gap-20 bg-gray-400 text-white rounded-lg py-1 mx-6 my-1">
       <div className=" w-96 py-1 ">{props.value.task}</div>

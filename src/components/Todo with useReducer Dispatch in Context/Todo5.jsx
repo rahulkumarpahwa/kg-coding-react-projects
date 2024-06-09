@@ -2,7 +2,7 @@
 import { TodoContext } from "../../Context/todoContext";
 import InputTodo from "./InputTodo";
 import TodoContainer from "./TodoContainer";
-import toast, { Toaster } from "react-hot-toast";
+// import toast, { Toaster } from "react-hot-toast";
 import Error from "./Error";
 import { useReducer } from "react";
 
@@ -35,41 +35,41 @@ const Todo = () => {
     },
   ]);
 
-  const onclick = (input, date) => {
-    todoListDispatch({
-      type: "NEW_TODO",
-      payload: {
-        task: input,
-        date,
-      },
-    });
+  // const onclick = (input, date) => {
+  //   todoListDispatch({
+  //     type: "NEW_TODO",
+  //     payload: {
+  //       task: input,
+  //       date,
+  //     },
+  //   });
 
-    // setTodoList((currentValue) => [
-    //   ...currentValue,
-    //   { task: input, date: date },
-    // ]);
-    toast.success("Todo Added!");
-  };
+  //   // setTodoList((currentValue) => [
+  //   //   ...currentValue,
+  //   //   { task: input, date: date },
+  //   // ]);
+  //   toast.success("Todo Added!");
+  // };
 
-  const ondelete = (todoItem) => {
-    todoListDispatch({
-      type: "DELETE_TODO",
-      payload: todoItem,
-    });
+  // const ondelete = (todoItem) => {
+  //   todoListDispatch({
+  //     type: "DELETE_TODO",
+  //     payload: todoItem,
+  //   });
 
-    // const newTodoList = todoList.filter((value) => value != todoItem);
-    // setTodoList(newTodoList);
-    toast.success("Todo Deleted!");
-  };
+  //   // const newTodoList = todoList.filter((value) => value != todoItem);
+  //   // setTodoList(newTodoList);
+  //   toast.success("Todo Deleted!");
+  // };
 
   return (
-    <TodoContext.Provider value={{ todoList, onclick, ondelete }}>
+    <TodoContext.Provider value={{ todoList, todoListDispatch }}>
       <div className="flex flex-col justify-center items-center my-10">
         <h2>Todo With Context API</h2>
         <InputTodo />
         <TodoContainer />
         <Error />
-        <Toaster />
+        {/* <Toaster /> */}
       </div>
     </TodoContext.Provider>
   );

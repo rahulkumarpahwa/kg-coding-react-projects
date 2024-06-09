@@ -4,4 +4,5 @@ export const TodoContext = createContext({
   todoList: [],
   onclick: () => {},
   ondelete: () => {},
+  todoListDispatch: {},
 });

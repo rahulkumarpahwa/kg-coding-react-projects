@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { TodoContext } from "../../Context/todoContext";
-import InputTodo from "../Todo with Context/InputTodo";
+import InputTodo from "./InputTodo";
 import TodoContainer from "./TodoContainer";
 import toast, { Toaster } from "react-hot-toast";
 import Error from "./Error";

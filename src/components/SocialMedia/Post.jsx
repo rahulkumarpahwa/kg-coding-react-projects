@@ -1,21 +1,21 @@
 import { useState } from "react";
-import redux from "../../assets/redux.svg";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { IoHeart } from "react-icons/io5";
 import { IoShareOutline } from "react-icons/io5";
+import { TbHttpDelete } from "react-icons/tb";
+import { useContext } from "react";
+import { socialContext } from "../../Context/socialMediaContext";
+import toast from "react-hot-toast";
 
-const Post = () => {
+const Post = ({ value }) => {
   const [like, setLike] = useState(false);
+  const { postDispatch } = useContext(socialContext);
   return (
     <div className="shadow rounded-lg p-4 m-4 flex flex-col items-center justify-center">
       <div className="w-48">
-        <img src={redux} alt="" className="w-full" />
+        <img src={value.img} alt="" className="w-full" />
       </div>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum aliquam
-        illo corporis animi harum delectus iure cumque alias eveniet odit, quas
-        doloremque molestias iusto velit debitis eaque minima modi aspernatur.
-      </p>
+      <p>{value.para}</p>
       <hr className="h-px w-full" />
       <div className="flex gap-4 justify-start">
         <button
@@ -28,6 +28,17 @@ const Post = () => {
         </button>
         <button>
           <IoShareOutline />
+        </button>
+        <button
+          onClick={() => {
+            postDispatch({
+              type: "DELETE_POST",
+              payload: value,
+            });
+            toast.success("Post Deleted Successfully!!");
+          }}
+        >
+          <TbHttpDelete />
         </button>
       </div>
     </div>

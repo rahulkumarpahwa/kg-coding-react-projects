@@ -1,12 +1,17 @@
 import Post from "./Post";
+import { useContext } from "react";
+import { socialContext } from "../../Context/socialMediaContext";
 
 const ShowPost = () => {
+  const { postList } = useContext(socialContext);
+
   return (
     <div className="flex items-center flex-col justify-center pl-32 m-auto mt-4 max-w-xl">
-      <Post />
-      <Post />
-      <Post />
-      <Post />
+      {console.log(postList)}
+      {postList.map((value) => {
+        // console.log(value);
+        return <Post key={value.para} value={value} />;
+      })}
     </div>
   );
 };

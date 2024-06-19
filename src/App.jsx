@@ -10,6 +10,7 @@ import Todo3 from "./components/Todo with Context/Todo3";
 import Todo4 from "./components/Todo with useReducer/Todo4";
 import Todo5 from "./components/Todo with useReducer Dispatch in Context/Todo5";
 import Main from "./components/SocialMedia/Main";
+import Main2 from "./components/SocialMedia with Dummy JSON API/Main";
 
 export const App = () => {
   const appRouter = createBrowserRouter([
@@ -24,6 +25,7 @@ export const App = () => {
     { path: "/todoreducer", element: <Todo4 /> },
     { path: "/tododispatchcontext", element: <Todo5 /> },
     { path: "/socialmedia", element: <Main /> },
+    { path: "/socialmediawithapi", element: <Main2 /> },
   ]);
 
   return <RouterProvider router={appRouter} />;

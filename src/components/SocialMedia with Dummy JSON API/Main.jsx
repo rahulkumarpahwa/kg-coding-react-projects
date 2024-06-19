@@ -12,11 +12,11 @@ const postReducer = (currentState, action) => {
   if (action.type === "NEW_POST") {
     newState = [
       {
+        id : action.payload.id,
         userId: action.payload.userId,
         title: action.payload.title,
         body: action.payload.body,
-        likes: action.payload.reactions.likes,
-        dislikes: action.payload.reactions.dislikes,
+        reactions : action.payload.reactions,
         tags: action.payload.tags,
         views: action.payload.views,
       },

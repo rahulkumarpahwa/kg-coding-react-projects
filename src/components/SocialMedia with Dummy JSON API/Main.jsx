@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Header from "./Header";
 import SideBar from "./SideBar";
 import ShowPost from "./ShowPost";
@@ -8,15 +8,16 @@ import { useReducer } from "react";
 import { Toaster } from "react-hot-toast";
 
 const postReducer = (currentState, action) => {
+  // should be in external file.
   let newState = currentState;
   if (action.type === "NEW_POST") {
     newState = [
       {
-        id : action.payload.id,
+        id: action.payload.id,
         userId: action.payload.userId,
         title: action.payload.title,
         body: action.payload.body,
-        reactions : action.payload.reactions,
+        reactions: action.payload.reactions,
         tags: action.payload.tags,
         views: action.payload.views,
       },
@@ -59,14 +60,23 @@ const Main = () => {
     },
   ]);
 
+  //  const AddPostFromAPI = (posts) => {
+  //      postDispatch({
+  //        type: "ADD_API_POSTS",
+  //        payload: posts,
+  //      });
+  //    };
 
-  const AddPostFromAPI = (posts) =>{
-    postDispatch({
-       type: "ADD_API_POSTS",
-       payload: posts,
-    });
-
-  }
+  const AddPostFromAPI = useCallback(
+    (posts) => {
+      //useCallback
+      postDispatch({
+        type: "ADD_API_POSTS",
+        payload: posts,
+      });
+    },
+    [postDispatch]
+  );
 
   return (
     <socialContext.Provider value={{ postList, postDispatch, AddPostFromAPI }}>

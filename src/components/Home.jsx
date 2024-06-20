@@ -31,18 +31,19 @@ const Home = () => {
           Projects with KG Coding.
         </p>
 
-        <figure className="shadow p-2">
+        {/* <figure className="shadow p-2">
           <img src="https://avatars.githubusercontent.com/u/56966500?v=4" className="w-48" />
           <figcaption>Rahul Kumar</figcaption>
-        </figure>
+        </figure> */}
 
         <div>
           <h2 className="text-center">You can go to following Projects:</h2>
-          <div className="flex flex-wrap gap-20  my-4">
+          <div className="flex flex-wrap gap-20  my-4 justify-center items-center">
             <Card data={{ path: "/todo", name: "Todo App" }} />
             <Card data={{ path: "/clock", name: "Clock App" }} />
             <Card data={{ path: "/calculator", name: "Calculator App" }} />
             <Card data={{ path: "/food", name: "Healthy Food" }} />
+            <Card data={{ path: "/socialmedia", name: "Social Media" }} />
           </div>
         </div>
       </div>

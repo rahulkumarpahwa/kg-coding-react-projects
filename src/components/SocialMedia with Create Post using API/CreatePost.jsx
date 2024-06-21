@@ -14,18 +14,30 @@ const CreatePost = ({ setSelectTab }) => {
 
   const { postDispatch } = useContext(socialContext);
 
-  fetch("https://dummyjson.com/posts/add", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      title: "I am in love with someone.",
-      userId: 5,
-      /* other post data */
-    }),
-  })
-    .then((res) => res.json())
-    .then(console.log);
-
+  const CreatePostWithApi = () => {
+    fetch("https://dummyjson.com/posts/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        userId: userElement.current.value,
+        title: titleElement.current.value,
+        body: bodyElement.current.value,
+        reactions: {
+          likes: likeElement.current.value,
+          dislikes: dislikeElement.current.value,
+        },
+        tags: tagsElement.current.value.split(" "),
+        views: viewsElement.current.value,
+      }),
+    })
+      .then((res) => res.json())
+      .then((post) => {
+        postDispatch({
+          type: "NEW_POST",
+          payload: post,
+        });
+      });
+  };
   return (
     <div className="pl-32 flex flex-col justify-center items-center m-4 gap-2">
       <h2>Create Post</h2>
@@ -75,21 +87,7 @@ const CreatePost = ({ setSelectTab }) => {
       <button
         className="w-24 bg-blue-700 text-white rounded-lg p-1 text-xl mt-3"
         onClick={() => {
-          postDispatch({
-            type: "NEW_POST",
-            payload: {
-              id: Date.now(),
-              userId: userElement.current.value,
-              title: titleElement.current.value,
-              body: bodyElement.current.value,
-              reactions: {
-                likes: likeElement.current.value,
-                dislikes: dislikeElement.current.value,
-              },
-              tags: tagsElement.current.value.split(" "),
-              views: viewsElement.current.value,
-            },
-          });
+          CreatePostWithApi();
           toast.success("Post Created Successfully!!");
           setSelectTab("Show Post");
         }}

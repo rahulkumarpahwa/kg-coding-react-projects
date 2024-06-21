@@ -2,12 +2,12 @@ import Post from "./Post";
 import { useContext } from "react";
 import { socialContext } from "../../Context/socialMediaContext";
 import Loading from "./Loading";
-import useApiPost from "./useApiPost";
+// import useApiPost from "./useApiPost";
 
 const ShowPost = () => {
   const { postList } = useContext(socialContext);
 
-  useApiPost();
+  // useApiPost();
 
   return postList.length === 0 ? (
     <Loading />

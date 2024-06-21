@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 import Header from "./Header";
 import SideBar from "./SideBar";
 import ShowPost from "./ShowPost";
@@ -77,11 +77,6 @@ const Main = () => {
     },
     [postDispatch]
   );
-
-  //useMemo Hook example
-  const arr = [2, 4, 7, 6, 5];
-  //const sortedArr = arr.sort(); // direct way, called every time the component gets rendered.
-  const sortedArr = useMemo(() => arr.sort(), [arr]); //called only when change in the arr, during re-rendered.
 
   return (
     <socialContext.Provider value={{ postList, postDispatch, AddPostFromAPI }}>

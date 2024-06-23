@@ -51,7 +51,7 @@ const Todo = () => {
   };
 
   return (
-    <div className="my-4 flex flex-col items-center">
+    <div className="flex flex-col items-center">
       <h2 className="text-center font-bold"> Todo App</h2>
       <InputTodo
         input={input}

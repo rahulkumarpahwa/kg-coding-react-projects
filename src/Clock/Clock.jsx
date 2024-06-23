@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import BackButton from "../components/BackButton";
 import Socials from "../components/Socials";
 
 const Clock = () => {
@@ -12,8 +11,7 @@ const Clock = () => {
   });
 
   return (
-    <div className="flex flex-col items-center justify-center my-36">
-      <BackButton />
+    <div className="flex flex-col items-center justify-center my-30">
       <div className="border-2 border-black text-center rounded-xl ">
         <h2 className="border-b-2 rounded-xl py-1 border-black bg-gradient-to-r from-slate-400 to-gray-300">
           Clock

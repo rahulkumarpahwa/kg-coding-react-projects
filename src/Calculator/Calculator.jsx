@@ -1,5 +1,4 @@
 import { useState } from "react";
-import BackButton from "../components/BackButton";
 import toast, { Toaster } from "react-hot-toast";
 
 const Calculator = () => {
@@ -43,8 +42,7 @@ const Calculator = () => {
   ];
 
   return (
-    <div className="flex items-center justify-center my-10 relative">
-      <BackButton />
+    <div className="flex items-center justify-center relative">
       <div className="border-2 flex flex-col w-[18rem] p-8 bg-neutral-600  rounded-lg">
         <input
           className="text-right w-30 py-2 text-5xl font-light text-white focus:outline-none bg-inherit"

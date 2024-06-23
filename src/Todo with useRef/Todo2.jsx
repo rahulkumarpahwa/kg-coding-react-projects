@@ -2,7 +2,6 @@ import InputTodo from "./InputTodo";
 import { useState, useRef } from "react";
 import TodoItem from "./TodoItem";
 import Socials from "../components/Socials";
-import BackButton from "../components/BackButton";
 import toast, { Toaster } from "react-hot-toast";
 
 const Todo = () => {
@@ -38,8 +37,7 @@ const Todo = () => {
   };
 
   return (
-    <div className="my-4 flex flex-col items-center">
-      <BackButton />
+    <div className="flex flex-col items-center">
       <h2 className="text-center font-bold"> Todo App</h2>
       <InputTodo
         inputRef={inputElement}

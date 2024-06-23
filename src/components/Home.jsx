@@ -1,12 +1,10 @@
 import Card from "./Card";
 import image from "../assets/react.svg";
 import image2 from "../assets/redux.svg";
-import Navbar from "./Navbar";
 
 const Home = () => {
   return (
     <div>
-      <Navbar />
       <div className="flex flex-col items-center justify-center">
         <div className="flex gap-10 my-4 ">
           <img

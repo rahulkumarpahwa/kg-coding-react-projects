@@ -11,12 +11,12 @@ const Post = ({ value }) => {
   const [like, setLike] = useState(false);
   const { postDispatch } = useContext(socialContext);
   return (
-    <div className="shadow rounded-lg p-4 m-4 flex flex-col items-center justify-center">
-      <div className="w-48">
+    <div className="shadow rounded-lg m-2 p-2 flex flex-col items-center justify-center w-72 h-64">
+      <div className="w-20 shadow m-4">
         <img src={value.img} alt="" className="w-full" />
       </div>
-      <p>{value.para}</p>
-      <hr className="h-px w-full" />
+      <p className="line-clamp-2">{value.para}</p>
+      <hr className="h-px w-full m-1 p-1" />
       <div className="flex gap-4 justify-start">
         <button
           onClick={() => {

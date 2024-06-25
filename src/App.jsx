@@ -13,6 +13,7 @@ import Todo5 from "./Todo with useReducer Dispatch in Context/Todo5";
 import Main from "./SocialMedia/Main";
 import Main2 from "./SocialMedia with Dummy JSON API/Main";
 import Main3 from "./SocialMedia with Create Post using API/Main";
+import Socials from "./components/Socials";
 
 const App = () => {
   return (

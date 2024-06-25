@@ -5,13 +5,13 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [drop, setDrop] = useState(false);
   return (
-    <div className="flex justify-between p-4 items-center">
+    <div className="flex justify-between pt-2 px-4 items-center">
       <Link to="/">
         <img src={image} alt="" className="w-[4rem]" />
       </Link>
       <ul className="flex justify-center gap-10">
         <li
-          className="hover:bg-[#00cce7] rounded-lg hover:text-white p-1 font-bold z-30"
+          className="hover:bg-[#00cce7] rounded-lg hover:text-white p-1 font-bold z-90"
           onClick={() => {
             setDrop(!drop);
           }}
@@ -19,7 +19,7 @@ const Navbar = () => {
           Projects
         </li>
         {drop && (
-          <div className="absolute top-14 right-20">
+          <div className="absolute top-7 right-20 z-90">
             <ul className="flex flex-col border p-2  m-4 rounded-lg ">
               <Link
                 to="/todo"

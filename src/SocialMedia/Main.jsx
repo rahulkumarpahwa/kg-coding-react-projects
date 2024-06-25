@@ -25,19 +25,19 @@ const Main = () => {
   const [selectTab, setSelectTab] = useState("Show Post");
   const [postList, postDispatch] = useReducer(postReducer, [
     {
-      img: "https://th.bing.com/th/id/OIP.CbG44bAc8QnKk59hOYTeyAHaHa?rs=1&pid=ImgDetMain",
-      para: "hello My name is Rahul Kumar.",
+      img: "http://localhost:5173/src/assets/rahullogo.png",
+      para: "This is first test post. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquam animi quod, tenetur harum sed dolorum cum id vel. Eos tempore laborum animi voluptas modi perspiciatis quidem quas. Voluptates, nemo!",
     },
     {
-      img: "https://www.jocooks.com/wp-content/uploads/2019/06/chocolate-chip-cookies-1-18-599x899.jpg",
-      para: "Hi this is very tasty cookie. Make sure you try It once in your lifetime. ",
+      img: "http://localhost:5173/src/assets/rahullogo.png",
+      para: "This is second test post. Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga aliquam animi quod, tenetur harum sed dolorum cum id vel. Eos tempore laborum animi voluptas modi perspiciatis quidem quas. Voluptates, nemo!",
     },
   ]);
 
   return (
     <socialContext.Provider value={{ postList, postDispatch }}>
       <div>
-        <Header />
+        {/* <Header /> */}
         <SideBar selectTab={selectTab} setSelectTab={setSelectTab} />
         {selectTab === "Show Post" ? (
           <ShowPost />

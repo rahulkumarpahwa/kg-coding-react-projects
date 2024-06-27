@@ -13,8 +13,10 @@ import Todo5 from "./Todo with useReducer Dispatch in Context/Todo5";
 import Main from "./SocialMedia/Main";
 import Main2 from "./SocialMedia with Dummy JSON API/Main";
 import Main3 from "./SocialMedia with Create Post using API/Main";
-
 import Main4 from "./SocialMedia with Link and useNavigate/Main4";
+import CreatePost from "./SocialMedia with Link and useNavigate/CreatePost";
+import ShowPost from "./SocialMedia with Link and useNavigate/ShowPost";
+import Main5 from "./SocialMedia with loader and action/Main5";
 
 const App = () => {
   return (
@@ -43,7 +45,34 @@ export const appRouter = createBrowserRouter([
       { path: "/socialmedia", element: <Main /> },
       { path: "/socialmediawithapi", element: <Main2 /> },
       { path: "/socialmediawithcreateapi", element: <Main3 /> },
-      { path: "/socialmediawithlinkandusenavifate", element: <Main4 /> },
+      {
+        path: "/socialmediawithlinkandusenavigate",
+        element: <Main4 />,
+        children: [
+          {
+            path: "/socialmediawithlinkandusenavigate/",
+            element: <ShowPost />,
+          },
+          {
+            path: "/socialmediawithlinkandusenavigate/createpost",
+            element: <CreatePost />,
+          },
+        ],
+      },
+      {
+        path: "/socialmediawithloaderandaction",
+        element: <Main5 />,
+        children: [
+          {
+            path: "/socialmediawithloaderandaction/",
+            element: <ShowPost />,
+          },
+          {
+            path: "/socialmediawithloaderandaction/createpost",
+            element: <CreatePost />,
+          },
+        ],
+      },
     ],
   },
 ]);

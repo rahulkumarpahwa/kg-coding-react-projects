@@ -93,7 +93,7 @@ const Main = () => {
     <socialContext.Provider value={{ postList, postDispatch }}>
       <div>
         <Header />
-        <SideBar selectTab={selectTab} setSelectTab={setSelectTab} />
+        <SideBar />
         {selectTab === "Show Post" ? (
           <ShowPost />
         ) : (

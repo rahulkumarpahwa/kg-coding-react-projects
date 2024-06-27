@@ -13,7 +13,8 @@ import Todo5 from "./Todo with useReducer Dispatch in Context/Todo5";
 import Main from "./SocialMedia/Main";
 import Main2 from "./SocialMedia with Dummy JSON API/Main";
 import Main3 from "./SocialMedia with Create Post using API/Main";
-import Socials from "./components/Socials";
+
+import Main4 from "./SocialMedia with Link and useNavigate/Main4";
 
 const App = () => {
   return (
@@ -42,6 +43,7 @@ export const appRouter = createBrowserRouter([
       { path: "/socialmedia", element: <Main /> },
       { path: "/socialmediawithapi", element: <Main2 /> },
       { path: "/socialmediawithcreateapi", element: <Main3 /> },
+      { path: "/socialmediawithlinkandusenavifate", element: <Main4 /> },
     ],
   },
 ]);

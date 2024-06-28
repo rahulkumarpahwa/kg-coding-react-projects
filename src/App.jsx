@@ -17,9 +17,9 @@ import Main4 from "./SocialMedia with Link and useNavigate/Main4";
 import CreatePost from "./SocialMedia with Link and useNavigate/CreatePost";
 import ShowPost from "./SocialMedia with Link and useNavigate/ShowPost";
 import Main5 from "./SocialMedia with loader and action/Main5";
-import ShowPost2 from "./SocialMedia with loader and action/ShowPost";
+import ShowPost2 , {PostLoader} from "./SocialMedia with loader and action/ShowPost";
 import CreatePost2 from "./SocialMedia with loader and action/CreatePost";
-import PostLoader from "./SocialMedia with loader and action/PostLoader";
+// import PostLoader from "./SocialMedia with loader and action/PostLoader";
 
 const App = () => {
   return (
@@ -64,12 +64,12 @@ export const appRouter = createBrowserRouter([
       },
       {
         path: "/socialmediawithloaderandaction",
-        element: <Main5 />,
+        element: <Main5 />, 
         children: [
           {
             path: "/socialmediawithloaderandaction/",
             element: <ShowPost2 />,
-            loader: PostLoader,
+            loader: PostLoader, // always put the logic to use the loader data in the component where loader is put (here it is ShowPost2.). It can't be available in any other component.
           },
           {
             path: "/socialmediawithloaderandaction/createpost",

@@ -7,7 +7,6 @@ import { useEffect } from "react";
 
 const ShowPost = () => {
   const { postList, postDispatch } = useContext(socialContext);
-
   const postFromLoader = useLoaderData();
   console.log(postFromLoader);
 
@@ -30,3 +29,12 @@ const ShowPost = () => {
 };
 
 export default ShowPost;
+
+export const PostLoader = async () => {
+  return fetch("https://dummyjson.com/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.posts);
+        return data.posts;
+      });
+};

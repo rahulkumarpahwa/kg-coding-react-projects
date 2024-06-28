@@ -4,7 +4,7 @@ import SideBar from "./SideBar";
 import { socialContext } from "../Context/socialMediaContext";
 import { useReducer } from "react";
 import { Toaster } from "react-hot-toast";
-import { Outlet, useLoaderData } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const postReducer = (currentState, action) => {
   // should be in external file.
@@ -46,8 +46,6 @@ const Main = () => {
       userId: 91,
     },
   ]);
-
-
 
   //  const AddPostFromAPI = (posts) => {
   //      postDispatch({

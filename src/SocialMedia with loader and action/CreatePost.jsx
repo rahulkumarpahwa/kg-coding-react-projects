@@ -39,7 +39,7 @@ const CreatePost = () => {
           type: "NEW_POST",
           payload: post,
         });
-        navigate("/socialmediawithlinkandusenavigate/");
+        navigate("/socialmediawithloaderandaction/");
       });
   };
   return (

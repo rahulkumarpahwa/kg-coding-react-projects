@@ -17,6 +17,9 @@ import Main4 from "./SocialMedia with Link and useNavigate/Main4";
 import CreatePost from "./SocialMedia with Link and useNavigate/CreatePost";
 import ShowPost from "./SocialMedia with Link and useNavigate/ShowPost";
 import Main5 from "./SocialMedia with loader and action/Main5";
+import ShowPost2 from "./SocialMedia with loader and action/ShowPost";
+import CreatePost2 from "./SocialMedia with loader and action/CreatePost";
+import PostLoader from "./SocialMedia with loader and action/PostLoader";
 
 const App = () => {
   return (
@@ -65,11 +68,12 @@ export const appRouter = createBrowserRouter([
         children: [
           {
             path: "/socialmediawithloaderandaction/",
-            element: <ShowPost />,
+            element: <ShowPost2 />,
+            loader: PostLoader,
           },
           {
             path: "/socialmediawithloaderandaction/createpost",
-            element: <CreatePost />,
+            element: <CreatePost2 />,
           },
         ],
       },

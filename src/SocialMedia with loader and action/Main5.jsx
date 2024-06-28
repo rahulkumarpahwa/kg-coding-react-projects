@@ -4,7 +4,7 @@ import SideBar from "./SideBar";
 import { socialContext } from "../Context/socialMediaContext";
 import { useReducer } from "react";
 import { Toaster } from "react-hot-toast";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLoaderData } from "react-router-dom";
 
 const postReducer = (currentState, action) => {
   // should be in external file.
@@ -47,6 +47,8 @@ const Main = () => {
     },
   ]);
 
+
+
   //  const AddPostFromAPI = (posts) => {
   //      postDispatch({
   //        type: "ADD_API_POSTS",
@@ -54,33 +56,33 @@ const Main = () => {
   //      });
   //    };
 
-  const AddPostFromAPI = useCallback(
-    (posts) => {
-      //useCallback
-      postDispatch({
-        type: "ADD_API_POSTS",
-        payload: posts,
-      });
-    },
-    [postDispatch]
-  );
+  // const AddPostFromAPI = useCallback(
+  //   (posts) => {
+  //     //useCallback
+  //     postDispatch({
+  //       type: "ADD_API_POSTS",
+  //       payload: posts,
+  //     });
+  //   },
+  //   [postDispatch]
+  // );
 
-  useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-    const PostApi = async () => {
-      const data = await fetch("https://dummyjson.com/posts", { signal });
-      const json = await data.json();
-      // console.log(json);
-      AddPostFromAPI(json.posts);
-    };
-    PostApi();
+  // useEffect(() => {
+  //   const controller = new AbortController();
+  //   const signal = controller.signal;
+  //   const PostApi = async () => {
+  //     const data = await fetch("https://dummyjson.com/posts", { signal });
+  //     const json = await data.json();
+  //     // console.log(json);
+  //     AddPostFromAPI(json.posts);
+  //   };
+  //   PostApi();
 
-    return () => {
-      console.log("useEffect removed!");
-      controller.abort();
-    };
-  }, []);
+  //   return () => {
+  //     console.log("useEffect removed!");
+  //     controller.abort();
+  //   };
+  // }, []);
 
   //useMemo Hook example
   //const arr = [2, 4, 7, 6, 5];
@@ -92,7 +94,7 @@ const Main = () => {
       <div>
         <Header />
         <SideBar />
-        <Outlet/>
+        <Outlet />
         <Toaster />
       </div>
     </socialContext.Provider>

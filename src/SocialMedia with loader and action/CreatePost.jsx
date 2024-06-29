@@ -1,6 +1,6 @@
-import { useContext } from "react";
 import toast from "react-hot-toast";
 import { redirect, Form } from "react-router-dom";
+
 
 const CreatePost = () => {
   return (
@@ -64,6 +64,9 @@ const CreatePost = () => {
 export default CreatePost;
 
 export const PostAction = async (data) => {
+
+  // const {postDispatch} = useContext(socialContext) //note: we can't use the context here as it is not a functional component.
+
   const formData = await data.request.formData();
   const { userId, title, body, likes, dislikes, tags, views } =
     Object.fromEntries(formData);

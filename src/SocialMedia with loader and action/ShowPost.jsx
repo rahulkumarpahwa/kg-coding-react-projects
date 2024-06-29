@@ -17,7 +17,7 @@ const ShowPost = () => {
     });
   }, [postFromLoader, postDispatch]);
 
-  return postList?.length === 0 ? (
+  return postList?.length === 0 || postList == undefined ? (
     <Loading />
   ) : (
     <div className="flex items-center flex-col justify-center pl-32 m-auto mt-4 max-w-xl">

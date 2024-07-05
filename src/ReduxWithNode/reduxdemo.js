@@ -9,7 +9,12 @@ const reducer = (store = INITIAL_VALUE, action) => {
   let newStore = store;
   if (action.type === "INCREMENT") {
     newStore = { counter: store.counter + 1 };
+  } else if (action.type === "DECREMENT") {
+    newStore = { counter: store.counter - 1 };
+  } else if (action.type === "ADDITION") {
+    newStore = { counter: store.counter + action.payload.number };
   }
+
   return newStore;
 };
 
@@ -25,3 +30,5 @@ store.subscribe(subscriber);
 
 store.dispatch({ type: "INCREMENT" }); // counter set to 1.
 store.dispatch({ type: "INCREMENT" }); // counter set to 2 from 1.
+store.dispatch({ type: "DECREMENT" }); // again counter set to 1 from 2.
+store.dispatch({ type: "ADDITION", payload: { number: 8 } }); // counter set to 9 from 1.

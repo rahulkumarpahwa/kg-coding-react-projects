@@ -24,13 +24,18 @@ import CreatePost2, {
   PostAction,
 } from "./SocialMedia with loader and action/CreatePost";
 // import PostLoader from "./SocialMedia with loader and action/PostLoader";
+import Counter from "./CounterWithRedux/Counter.jsx";
+import { Provider } from "react-redux";
+import { store } from "./CounterWithRedux/store.js";
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <Outlet />
-    </div>
+    <Provider store={store}>
+      <div>
+        <Navbar />
+        <Outlet />
+      </div>
+    </Provider>
   );
 };
 
@@ -81,6 +86,10 @@ export const appRouter = createBrowserRouter([
             action: PostAction,
           },
         ],
+      },
+      {
+        path: "/counter",
+        element: <Counter />,
       },
     ],
   },

@@ -25,17 +25,17 @@ import CreatePost2, {
 } from "./SocialMedia with loader and action/CreatePost";
 // import PostLoader from "./SocialMedia with loader and action/PostLoader";
 import Counter from "./CounterWithRedux/Counter.jsx";
+import Counter2 from "./CounterWithReduxToolkit/Counter.jsx";
 import { Provider } from "react-redux";
-import { store } from "./CounterWithRedux/store.js";
+import { store } from "./CounterWithRedux/store.js"; //only redux
+import { toolkitStore } from "./CounterWithReduxToolkit/store.js"; // with redux toolkit
 
 const App = () => {
   return (
-    <Provider store={store}>
-      <div>
-        <Navbar />
-        <Outlet />
-      </div>
-    </Provider>
+    <div>
+      <Navbar />
+      <Outlet />
+    </div>
   );
 };
 
@@ -89,7 +89,19 @@ export const appRouter = createBrowserRouter([
       },
       {
         path: "/counter",
-        element: <Counter />,
+        element: (
+          <Provider store={store}>
+            <Counter />
+          </Provider>
+        ),
+      },
+      {
+        path: "/counterwithtoolkit",
+        element: (
+          <Provider store={toolkitStore}>
+            <Counter2 />
+          </Provider>
+        ),
       },
     ],
   },

@@ -1,48 +1,43 @@
 import { useRef } from "react";
 import { HiPlusCircle, HiMinusCircle } from "react-icons/hi";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { TiDelete } from "react-icons/ti";
 import { FcPrivacy } from "react-icons/fc";
+import { increment, decrement, addition, subtraction, clear } from "./store";
 
 const Counter = () => {
-  const counter = useSelector((store) => store.counter);
-  const privacy = useSelector((store) => store.privacy);
-
+  const { counterVal } = useSelector((store) => store.counter);
   const dispatch = useDispatch();
+  // const privacy = useSelector((store) => store.privacy);
+
   const inputElement = useRef();
   return (
     <div className="flex items-center justify-center flex-col mt-20 gap-1">
-      <h2>Counter App With Redux</h2>
+      <h2>Counter App With Redux Toolkit</h2>
       <div className="flex items-center justify-center text-3xl">
-        <HiPlusCircle
-          onClick={() => dispatch({ type: "INCREMENT" })}
-          className="z-90"
-        />
-        {!privacy ? (
-          <div className="w-[4rem] h-[3.2rem] border items-center flex justify-center m-2 p-4">
-            {counter}
-          </div>
-        ) : (
+        <HiPlusCircle onClick={() => dispatch(increment())} className="z-90" />
+        {/* {!privacy ? ( */}
+        <div className="w-[4rem] h-[3.2rem] border items-center flex justify-center m-2 p-4">
+          {counterVal}
+        </div>
+        {/* ) : (
           <div className="w-[4rem] h-[3.2rem] border items-center flex justify-center m-2 p-3">
             <FcPrivacy />
           </div>
-        )}
-        <HiMinusCircle
-          onClick={() => dispatch({ type: "DECREMENT" })}
-          className="z-90"
-        />
+        )} */}
+        <HiMinusCircle onClick={() => dispatch(decrement())} className="z-90" />
       </div>
 
       <div className="flex gap-2">
         <button
           className="flex items-center justify-center bg-red-600  text-white px-1 rounded-lg "
-          onClick={() => dispatch({ type: "CLEAR" })}
+          onClick={() => dispatch(clear())}
         >
           Reset <TiDelete className="text-xl" />
         </button>
         <button
           className="flex items-center justify-center bg-yellow-400 text-white font-bold px-1 rounded-lg "
-          onClick={() => dispatch({ type: "PRIVATE" })}
+          // onClick={() => dispatch({ type: "PRIVATE" })}
         >
           Private
         </button>
@@ -57,10 +52,11 @@ const Counter = () => {
         <button
           className="bg-blue-500 text-white px-2 py-1 text-xs  rounded"
           onClick={() =>
-            dispatch({
-              type: "ADDITION",
-              payload: { value: inputElement.current.value },
-            })
+            dispatch(
+              addition({
+                value: inputElement.current.value,
+              })
+            )
           }
         >
           Add
@@ -68,10 +64,11 @@ const Counter = () => {
         <button
           className="bg-green-600 text-white px-2 py-1 text-xs  rounded"
           onClick={() =>
-            dispatch({
-              type: "SUBTRACTION",
-              payload: { value: inputElement.current.value },
-            })
+            dispatch(
+              subtraction({
+                value: inputElement.current.value,
+              })
+            )
           }
         >
           Sub

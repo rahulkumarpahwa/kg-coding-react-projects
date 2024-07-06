@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { TiDelete } from "react-icons/ti";
 import { FcPrivacy } from "react-icons/fc";
 import {
+  //actions importing
   increment,
   decrement,
   addition,
@@ -24,14 +25,14 @@ const Counter = () => {
       <div className="flex items-center justify-center text-3xl">
         <HiPlusCircle onClick={() => dispatch(increment())} className="z-90" />
         {!privacyVal ? (
-        <div className="w-[4rem] h-[3.2rem] border items-center flex justify-center m-2 p-4">
-          {counterVal}
-        </div>
-         ) : (
-          <div className="w-[4rem] h-[3.2rem] border items-center flex justify-center m-2 p-3">
+          <div className="min-w-[4rem] h-[3.2rem] border items-center flex justify-center m-2 p-4">
+            {counterVal}
+          </div>
+        ) : (
+          <div className="min-w-[4.12rem] h-[3.2rem] border items-center flex justify-center m-2 p-3">
             <FcPrivacy />
           </div>
-        )} 
+        )}
         <HiMinusCircle onClick={() => dispatch(decrement())} className="z-90" />
       </div>
 
@@ -58,25 +59,27 @@ const Counter = () => {
         />{" "}
         <button
           className="bg-blue-500 text-white px-2 py-1 text-xs  rounded"
-          onClick={() =>
+          onClick={() => {
             dispatch(
               addition({
                 value: inputElement.current.value,
               })
-            )
-          }
+            );
+            inputElement.current.value = "";
+          }}
         >
           Add
         </button>
         <button
           className="bg-green-600 text-white px-2 py-1 text-xs  rounded"
-          onClick={() =>
+          onClick={() => {
             dispatch(
               subtraction({
                 value: inputElement.current.value,
               })
-            )
-          }
+            );
+            inputElement.current.value = "";
+          }}
         >
           Sub
         </button>

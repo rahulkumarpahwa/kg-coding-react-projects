@@ -3,12 +3,19 @@ import { HiPlusCircle, HiMinusCircle } from "react-icons/hi";
 import { useSelector, useDispatch } from "react-redux";
 import { TiDelete } from "react-icons/ti";
 import { FcPrivacy } from "react-icons/fc";
-import { increment, decrement, addition, subtraction, clear } from "./store";
+import {
+  increment,
+  decrement,
+  addition,
+  subtraction,
+  clear,
+  privates,
+} from "./store";
 
 const Counter = () => {
   const { counterVal } = useSelector((store) => store.counter);
+  const { privacyVal } = useSelector((store) => store.privacy);
   const dispatch = useDispatch();
-  // const privacy = useSelector((store) => store.privacy);
 
   const inputElement = useRef();
   return (
@@ -16,15 +23,15 @@ const Counter = () => {
       <h2>Counter App With Redux Toolkit</h2>
       <div className="flex items-center justify-center text-3xl">
         <HiPlusCircle onClick={() => dispatch(increment())} className="z-90" />
-        {/* {!privacy ? ( */}
+        {!privacyVal ? (
         <div className="w-[4rem] h-[3.2rem] border items-center flex justify-center m-2 p-4">
           {counterVal}
         </div>
-        {/* ) : (
+         ) : (
           <div className="w-[4rem] h-[3.2rem] border items-center flex justify-center m-2 p-3">
             <FcPrivacy />
           </div>
-        )} */}
+        )} 
         <HiMinusCircle onClick={() => dispatch(decrement())} className="z-90" />
       </div>
 
@@ -37,7 +44,7 @@ const Counter = () => {
         </button>
         <button
           className="flex items-center justify-center bg-yellow-400 text-white font-bold px-1 rounded-lg "
-          // onClick={() => dispatch({ type: "PRIVATE" })}
+          onClick={() => dispatch(privates())}
         >
           Private
         </button>

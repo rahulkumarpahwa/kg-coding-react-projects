@@ -32,7 +32,8 @@ const privacySlice = createSlice({
   initialState: { privacyVal: false },
   reducers: {
     privates: (state) => {
-      return { privacyVal: !state.privacyVal };
+      // return { privacyVal: !state.privacyVal };
+     state.privacyVal = !state.privacyVal; //newer way with toolkit.
     },
   },
 });

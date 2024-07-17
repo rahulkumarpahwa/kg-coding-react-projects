@@ -4,8 +4,9 @@ import { IoCreateOutline } from "react-icons/io5";
 const SideBar = ({selectTab, setSelectTab}) => {
 
   return (
-    <div className=" w-36 p-6 flex flex-col items-center h-screen shadow-2xl">
-      <ul className="flex flex-col gap-5 items-center">
+    <div className="flex flex-col items-center absolute pr-6 top-[-40px] h-full bg-neutral-500">
+      <h6 className="pl-8 text-center">Tabs</h6>
+      <ul className="flex flex-col gap-2 items-center">
         <li
           onClick={() => setSelectTab("Show Post")}
           className={`${

@@ -42,7 +42,8 @@ const Calculator = () => {
   ];
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center flex-col mt-10 mb-20">
+      <h2 className="font-mono">Calculator</h2>
       <div className="border-2 flex flex-col w-[18rem] p-8 bg-neutral-600  rounded-lg">
         <input
           className="text-right w-30 py-2 text-5xl font-light text-white focus:outline-none bg-inherit"

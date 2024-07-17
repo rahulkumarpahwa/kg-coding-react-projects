@@ -6,7 +6,7 @@ const ShowPost = () => {
   const { postList } = useContext(socialContext);
 
   return (
-    <div className="flex items-center flex-col justify-center m-auto  max-w-xl">
+    <div className="flex items-center flex-col justify-center m-auto max-w-xl">
       {console.log(postList)}
       {postList.map((value) => {
         // console.log(value);

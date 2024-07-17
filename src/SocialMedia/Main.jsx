@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Header from "./Header";
 import SideBar from "./SideBar";
 import ShowPost from "./ShowPost";
 import CreatePost from "./CreatePost";
@@ -36,8 +35,8 @@ const Main = () => {
 
   return (
     <socialContext.Provider value={{ postList, postDispatch }}>
-      <div>
-        {/* <Header /> */}
+      <div className="relative font-mono" >
+        <h2 className="text-center font-mono antialiased">Social Media</h2>
         <SideBar selectTab={selectTab} setSelectTab={setSelectTab} />
         {selectTab === "Show Post" ? (
           <ShowPost />

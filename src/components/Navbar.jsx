@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import image from "../assets/rahullogo.png";
 import { Link } from "react-router-dom";
+import data from "../utils/list.json";
 
 const Navbar = () => {
   const [drop, setDrop] = useState(false);
@@ -34,32 +35,18 @@ const Navbar = () => {
           Projects
         </li>
         {drop && (
-          <div className="absolute top-[48px] right-20 z-90 ">
+          <div className="absolute top-[48px] right-20 z-90 w-56 hover:w-[22rem]">
             <ul className="flex flex-col border p-2 rounded-lg bg-white">
-              <Link
-                to="/todo"
-                className="no-underline text-inherit hover:text-[#00cce7] font-semibold"
-              >
-                Todo
-              </Link>
-              <Link
-                to="/clock"
-                className="no-underline text-inherit  hover:text-[#00cce7] font-semibold"
-              >
-                Clock
-              </Link>
-              <Link
-                to="/calculator"
-                className="no-underline text-inherit  hover:text-[#00cce7] font-semibold"
-              >
-                Calculator
-              </Link>
-              <Link
-                to="/food"
-                className="no-underline text-inherit  hover:text-[#00cce7] font-semibold"
-              >
-                Healthy Food
-              </Link>
+              {data.list.map((item) => (
+                <Link
+                  key={item.id}
+                  to={item.path}
+                  target={item.name === "Myntra Full Stack App" ? "_blank" : ""}
+                  className="no-underline text-inherit hover:text-[#00cce7] font-semibold truncate hover:text-clip"
+                >
+                  {item.name}
+                </Link>
+              ))}
             </ul>
           </div>
         )}

@@ -29,12 +29,14 @@ import Counter2 from "./CounterWithReduxToolkit/Counter.jsx";
 import { Provider } from "react-redux";
 import { store } from "./CounterWithRedux/store.js"; //only redux
 import { toolkitStore } from "./CounterWithReduxToolkit/store.js"; // with redux toolkit
+import Footer from "./components/Footer.jsx";
 
 const App = () => {
   return (
     <div>
       <Navbar />
       <Outlet />
+      <Footer/>
     </div>
   );
 };

@@ -6,7 +6,7 @@ import data from "../utils/list.json";
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center gap-2 justify-center">
+    <div className="flex flex-col items-center gap-2 justify-center py-10">
       <div className="flex gap-10 my-4 ">
         <img src={image} className="w-20 rotate" />
         <img src={image2} className="w-20 rotate" />
@@ -18,12 +18,6 @@ const Home = () => {
         </Link>{" "}
         with KG Coding.
       </h1>
-
-      {/* <figure className="shadow p-2">
-          <img src="https://avatars.githubusercontent.com/u/56966500?v=4" className="w-48" />
-          <figcaption>Rahul Kumar</figcaption>
-        </figure> */}
-
       <h2 className="text-center text-mono text-3xl">
         You can go to the following Projects :
       </h2>

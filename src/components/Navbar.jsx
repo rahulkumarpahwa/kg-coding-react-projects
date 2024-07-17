@@ -20,7 +20,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="flex justify-between pt-2 px-4 p-2 items-center shadow-md shadow-[#00cce7]">
+    <div className="flex justify-between pt-2 px-4 p-2 items-center">
       <Link to="/">
         <img src={image} alt="" className="w-[4rem]" />
       </Link>

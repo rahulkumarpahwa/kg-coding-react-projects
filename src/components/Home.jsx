@@ -2,27 +2,15 @@ import Card from "./Card";
 import image from "../assets/react.svg";
 import image2 from "../assets/redux.svg";
 import { Link } from "react-router-dom";
+import data from "../utils/list.json";
 
 const Home = () => {
   return (
     <div className="flex flex-col items-center gap-2 justify-center">
       <div className="flex gap-10 my-4 ">
-        <img
-          src={image}
-          alt=""
-          width={1000}
-          height={1000}
-          className="w-20 rotate"
-        />
-        <img
-          src={image2}
-          alt=""
-          width={1000}
-          height={1000}
-          className="w-20 rotate"
-        />
+        <img src={image} className="w-20 rotate" />
+        <img src={image2} className="w-20 rotate" />
       </div>
-
       <h1 className="font-semibold text-3xl font-mono">
         Welcome to{" "}
         <Link className="text-black" to="/">
@@ -40,11 +28,9 @@ const Home = () => {
         You can go to the following Projects :
       </h2>
       <div className="flex flex-wrap gap-20 my-4 justify-center items-center">
-        <Card data={{ path: "/todo", name: "Todo App" }} />
-        <Card data={{ path: "/clock", name: "Clock App" }} />
-        <Card data={{ path: "/calculator", name: "Calculator App" }} />
-        <Card data={{ path: "/food", name: "Healthy Food" }} />
-        <Card data={{ path: "/socialmedia", name: "Social Media" }} />
+        {data.list.map((item) => (
+          <Card key={item.id} item={item} />
+        ))}
       </div>
     </div>
   );

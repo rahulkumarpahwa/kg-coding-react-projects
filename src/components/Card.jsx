@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 
-const Card = (props) => {
-  const { path, name } = props.data;
+const Card = ({ item }) => {
   return (
     <Link
-      to={path}
-      className="border-2 rounded-xl text-center no-underline text-black border-black w-40 p-4 hover:scale-105 duration-200"
+      to={item.path}
+      target={item.name === "Myntra Full Stack App" ? "_blank" : ""}
+      className="shadow-xl font-mono antialiased text-xl shadow-zinc-400 rounded-xl text-center no-underline text-black  w-56 p-4 hover:scale-105 duration-200 transition-transform"
     >
-      {name}
+      {item.name}
     </Link>
   );
 };

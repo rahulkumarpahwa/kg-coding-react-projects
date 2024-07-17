@@ -5,35 +5,65 @@
       "name": "Todo App",
       "path": "/todo"
     },
-    { "id": "012", "name": "Todo App", "path": "/todo" },
+    { "id": "012", "name": "Clock App", "path": "/clock" },
 
-    { "id": "013", "name": "Todo App", "path": "/todo" },
+    { "id": "013", "name": "Calculator App", "path": "/calculator" },
     {
       "id": "014",
-      "name": "Todo App",
-      "path": "/todo"
+      "name": "Healthy Food List App",
+      "path": "/food"
     },
-    { "id": "015", "name": "Todo App", "path": "/todo" },
-    { "id": "016", "name": "Todo App", "path": "/todo" },
+    { "id": "015", "name": "Social Media App", "path": "/socialmedia" },
+    { "id": "016", "name": "Todo App with useRef", "path": "/todoref" },
     {
       "id": "017",
-      "name": "Todo App",
-      "path": "/todo"
+      "name": "Todo App with Context API",
+      "path": "/todocontext"
     },
     {
       "id": "018",
-      "name": "Todo App",
-      "path": "/todo"
+      "name": "Todo App with useReducer",
+      "path": "/todoreducer"
     },
     {
       "id": "019",
-      "name": "Todo App",
-      "path": "/todo"
+      "name": "Todo App with useReducer and Context API",
+      "path": "/tododispatchcontext"
     },
     {
       "id": "020",
-      "name": "Todo App",
-      "path": "/todo"
+      "name": "Social Media App with DummyJSON",
+      "path": "/socialmediawithapi"
+    },
+    {
+      "id": "021",
+      "name": "Social Media App with CreatePost using API",
+      "path": "/socialmediawithcreateapi"
+    },
+    {
+      "id": "022",
+      "name": "Social Media App with Link and useNavigate",
+      "path": "/socialmediawithlinkandusenavigate"
+    },
+    {
+      "id": "023",
+      "name": "Social Media App with Loader and Action",
+      "path": "/socialmediawithloaderandaction"
+    },
+    {
+      "id": "024",
+      "name": "Counter App with Redux",
+      "path": "/counter"
+    },
+    {
+      "id": "025",
+      "name": "Counter App with Redux Toolkit",
+      "path": "/counterwithtoolkit"
+    },
+    {
+      "id": "026",
+      "name": "Myntra Full Stack App",
+      "path": "https://github.com/rahulkumarpahwa/myntra-react-project-front"
     }
   ]
 }

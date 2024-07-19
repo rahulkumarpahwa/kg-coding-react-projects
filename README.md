@@ -38,5 +38,5 @@ This is React-Redux Projects with KG Coding. It is build to learn React and Redu
 
 ## Live Link : 
 
-(React-Redux Projects)[https://react-redux-projects-rahul.netlify.app/]
+[React-Redux Projects](https://react-redux-projects-rahul.netlify.app/)
 

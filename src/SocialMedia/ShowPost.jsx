@@ -7,7 +7,7 @@ const ShowPost = () => {
 
   return (
     <div className="flex items-center flex-col justify-center m-auto max-w-xl">
-      {console.log(postList)}
+      <h2 className="text-2xl">Show Post</h2>
       {postList.map((value) => {
         // console.log(value);
         return <Post key={value.para} value={value} />;

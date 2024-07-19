@@ -9,7 +9,7 @@ const CreatePost = ({ setSelectTab }) => {
   const { postDispatch } = useContext(socialContext);
   return (
     <div className="flex items-center flex-col justify-center m-auto max-w-xl gap-2">
-      <h2>Create Post</h2>
+      <h2 className="text-2xl">Create Post</h2>
       <input
         type="text"
         ref={imgElement}

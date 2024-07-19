@@ -1,5 +1,4 @@
 import { useCallback, useMemo, useEffect, useState } from "react";
-import Header from "./Header";
 import SideBar from "./SideBar";
 import { socialContext } from "../Context/socialMediaContext";
 import { useReducer } from "react";
@@ -89,10 +88,10 @@ const Main = () => {
 
   return (
     <socialContext.Provider value={{ postList, postDispatch }}>
-      <div>
-        <Header />
+      <div className="relative font-mono mt-10 mb-40">
+        <h2 className="text-center font-mono antialiased">Social Media with Link and useNavigate</h2>
         <SideBar />
-        <Outlet/>
+        <Outlet />
         <Toaster />
       </div>
     </socialContext.Provider>

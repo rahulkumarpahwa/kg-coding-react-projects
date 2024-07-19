@@ -1,10 +1,5 @@
 {
   "list": [
-    {
-      "id": "011",
-      "name": "Todo App",
-      "path": "/todo"
-    },
     { "id": "012", "name": "Clock App", "path": "/clock" },
 
     { "id": "013", "name": "Calculator App", "path": "/calculator" },
@@ -13,7 +8,12 @@
       "name": "Healthy Food List App",
       "path": "/food"
     },
-    { "id": "015", "name": "Social Media App", "path": "/socialmedia" },
+
+    {
+      "id": "011",
+      "name": "Todo App",
+      "path": "/todo"
+    },
     { "id": "016", "name": "Todo App with useRef", "path": "/todoref" },
     {
       "id": "017",
@@ -30,6 +30,7 @@
       "name": "Todo App with useReducer and Context API",
       "path": "/tododispatchcontext"
     },
+    { "id": "015", "name": "Social Media App", "path": "/socialmedia" },
     {
       "id": "020",
       "name": "Social Media App with DummyJSON",

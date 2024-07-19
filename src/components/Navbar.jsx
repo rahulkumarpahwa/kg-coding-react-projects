@@ -42,7 +42,7 @@ const Navbar = () => {
         </li>
       </ul>
       {drop && (
-        <div className="absolute top-[52px] right-20 z-90 w-56 hover:w-[22rem]">
+        <div className="absolute top-[52px] right-20 w-56 hover:w-[22rem] z-50">
           <ul className="flex flex-col border p-2 rounded-lg bg-white">
             {data.list.map((item) => (
               <Link

@@ -11,7 +11,7 @@ const Counter = () => {
   const dispatch = useDispatch();
   const inputElement = useRef();
   return (
-    <div className="flex items-center justify-center flex-col mt-20 gap-1">
+    <div className="flex items-center justify-center flex-col mt-40 gap-1 mb-40 font-mono">
       <h2>Counter App With Redux</h2>
       <div className="flex items-center justify-center text-3xl">
         <HiPlusCircle

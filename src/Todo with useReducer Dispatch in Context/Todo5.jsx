@@ -64,8 +64,8 @@ const Todo = () => {
 
   return (
     <TodoContext.Provider value={{ todoList, todoListDispatch }}>
-      <div className="flex flex-col justify-center items-center">
-        <h2>Todo With Context API</h2>
+      <div className="flex flex-col justify-center items-center pt-10 pb-40">
+        <h2>Todo with useReducer and Context API</h2>
         <InputTodo />
         <TodoContainer />
         <Error />

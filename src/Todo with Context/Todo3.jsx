@@ -29,8 +29,8 @@ const Todo = () => {
 
   return (
     <TodoContext.Provider value={{ todoList, onclick, ondelete }}>
-      <div className="flex flex-col justify-center items-center my-10">
-        <h2>Todo With Context API</h2>
+      <div className="flex flex-col justify-center items-center pt-10 pb-40 ">
+        <h2>Todo with Context API</h2>
         <InputTodo />
         <TodoContainer />
         <Error />

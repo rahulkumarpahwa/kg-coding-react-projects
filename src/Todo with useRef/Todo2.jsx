@@ -1,7 +1,6 @@
 import InputTodo from "./InputTodo";
 import { useState, useRef } from "react";
 import TodoItem from "./TodoItem";
-import Socials from "../components/Socials";
 import toast, { Toaster } from "react-hot-toast";
 
 const Todo = () => {
@@ -37,8 +36,8 @@ const Todo = () => {
   };
 
   return (
-    <div className="flex flex-col items-center">
-      <h2 className="text-center font-bold"> Todo App</h2>
+    <div className="flex flex-col items-center pt-10 pb-40">
+      <h2 className="text-center font-bold"> Todo App with useRef</h2>
       <InputTodo
         inputRef={inputElement}
         dateRef={dateElement}
@@ -50,7 +49,6 @@ const Todo = () => {
       <div>
         {data.length === 0 && "All Todo Finished! \n\n Enjoy your Day!"}
       </div>
-      <Socials />
       <Toaster />
     </div>
   );

@@ -51,6 +51,11 @@
       "path": "/socialmediawithloaderandaction"
     },
     {
+      "id": "027",
+      "name": "Redux with Node",
+      "path": "https://github.com/rahulkumarpahwa/kg-coding-react-projects/tree/main/src/ReduxWithNode"
+    },
+    {
       "id": "024",
       "name": "Counter App with Redux",
       "path": "/counter"

@@ -48,7 +48,12 @@ const Navbar = () => {
               <Link
                 key={item.id}
                 to={item.path}
-                target={item.name === "Myntra Full Stack App" ? "_blank" : ""}
+                target={
+                  item.name === "Myntra Full Stack App" ||
+                  item.name === "Redux with Node"
+                    ? "_blank"
+                    : ""
+                }
                 className="no-underline text-inherit hover:text-[#00cce7] font-semibold truncate hover:text-clip"
               >
                 {item.name}

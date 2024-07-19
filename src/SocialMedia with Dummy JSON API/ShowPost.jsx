@@ -12,7 +12,8 @@ const ShowPost = () => {
   return postList.length === 0 ? (
     <Loading />
   ) : (
-    <div className="flex items-center flex-col justify-center pl-32 m-auto mt-4 max-w-xl">
+    <div className="flex items-center flex-col justify-center m-auto w-[30rem]">
+      <h2 className="text-2xl">Show Post</h2>
       {postList.map((value) => {
         return <Post key={value.id} value={value} />;
       })}

@@ -91,7 +91,7 @@ const Main = () => {
   return (
     <socialContext.Provider value={{ postList, postDispatch }}>
       <div className="mt-10 mb-40  font-mono relative">
-        <h2 className="text-center font-mono antialiased">Social Media</h2>
+        <h2 className="text-center font-mono antialiased">Social Media with CreatePost using API</h2>
 
         <SideBar selectTab={selectTab} setSelectTab={setSelectTab} />
         {selectTab === "Show Post" ? (

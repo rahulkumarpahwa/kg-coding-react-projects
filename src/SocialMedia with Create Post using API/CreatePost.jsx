@@ -39,8 +39,8 @@ const CreatePost = ({ setSelectTab }) => {
       });
   };
   return (
-    <div className="pl-32 flex flex-col justify-center items-center m-4 gap-2">
-      <h2>Create Post</h2>
+    <div className="flex flex-col justify-center items-center m-4 gap-2">
+      <h2 className="text-2xl">Create Post</h2>
       <input
         type="number"
         ref={userElement}

@@ -30,6 +30,7 @@ const SideBar = () => {
               ? "bg-neutral-500 rounded-lg text-black no-underline "
               : "text-black no-underline"
           }
+          end
         >
           <li
             className={`px-8 py-2 rounded-lg text-2xl flex gap-2 items-center`}

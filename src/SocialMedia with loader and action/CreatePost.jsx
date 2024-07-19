@@ -4,9 +4,12 @@ import { redirect, Form } from "react-router-dom";
 
 const CreatePost = () => {
   return (
-    <div className="pl-32 flex flex-col justify-center items-center m-4 gap-2">
-      <h2>Create Post</h2>
-      <Form method="POST"  className="flex flex-col justify-center items-center gap-2">
+    <div className="flex flex-col justify-center items-center m-4 gap-2">
+      <h2 className="text-2xl">Create Post</h2>
+      <Form
+        method="POST"
+        className="flex flex-col justify-center items-center gap-2"
+      >
         <input
           type="number"
           name="userId"

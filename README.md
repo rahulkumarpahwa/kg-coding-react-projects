@@ -1,8 +1,14 @@
-# React + Vite
+## Introduction :
+This is React-Redux Projects with KG Coding. It is build to learn React and Redux. This includes following projects :
+1. Todo App
+2. Clock App
+3. Calculator App
+4. Healthy Food List App
+5. Social Media App
+6. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+
+24. Myntra Full Stack App
